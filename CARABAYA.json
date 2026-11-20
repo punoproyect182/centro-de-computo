@@ -1,1 +1,100 @@
-
+{
+  "updatedAt": "2026-11-20T00:05:31.013Z",
+  "departamento": "Puno",
+  "provincia": "Carabaya",
+  "distritos": [
+    "Macusani",
+    "Ajoyani",
+    "Ayapata",
+    "Coasa",
+    "Corani",
+    "Crucero",
+    "Ituata",
+    "Ollachea",
+    "San Gabán",
+    "Usicayos"
+  ],
+  "resumenDistritos": [
+    {
+      "distrito": "Macusani",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Ajoyani",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Ayapata",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Coasa",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Corani",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Crucero",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Ituata",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Ollachea",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "San Gabán",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Usicayos",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    }
+  ],
+  "actas": []
+}
