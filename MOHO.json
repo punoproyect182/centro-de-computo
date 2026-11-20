@@ -1,1 +1,46 @@
-
+{
+  "updatedAt": "2026-11-20T00:05:40.707Z",
+  "departamento": "Puno",
+  "provincia": "Moho",
+  "distritos": [
+    "Moho",
+    "Conima",
+    "Huayrapata",
+    "Tilali"
+  ],
+  "resumenDistritos": [
+    {
+      "distrito": "Moho",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Conima",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Huayrapata",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Tilali",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    }
+  ],
+  "actas": []
+}
