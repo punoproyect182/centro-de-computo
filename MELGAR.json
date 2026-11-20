@@ -1,1 +1,91 @@
-
+{
+  "updatedAt": "2026-11-20T00:05:39.097Z",
+  "departamento": "Puno",
+  "provincia": "Melgar",
+  "distritos": [
+    "Ayaviri",
+    "Antauta",
+    "Cupi",
+    "Llalli",
+    "Macari",
+    "Nuñoa",
+    "Orurillo",
+    "Santa Rosa",
+    "Umachiri"
+  ],
+  "resumenDistritos": [
+    {
+      "distrito": "Ayaviri",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Antauta",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Cupi",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Llalli",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Macari",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Nuñoa",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Orurillo",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Santa Rosa",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Umachiri",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    }
+  ],
+  "actas": []
+}
