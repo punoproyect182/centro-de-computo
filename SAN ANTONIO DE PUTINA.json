@@ -1,1 +1,55 @@
-
+{
+  "updatedAt": "2026-11-20T00:05:42.285Z",
+  "departamento": "Puno",
+  "provincia": "San Antonio de Putina",
+  "distritos": [
+    "Putina",
+    "Ananea",
+    "Pedro Vilca Apaza",
+    "Quilcapuncu",
+    "Sina"
+  ],
+  "resumenDistritos": [
+    {
+      "distrito": "Putina",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Ananea",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Pedro Vilca Apaza",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Quilcapuncu",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Sina",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    }
+  ],
+  "actas": []
+}
