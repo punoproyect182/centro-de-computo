@@ -1,1 +1,55 @@
-
+{
+  "updatedAt": "2026-11-20T00:05:34.183Z",
+  "departamento": "Puno",
+  "provincia": "El Collao",
+  "distritos": [
+    "Ilave",
+    "Capazo",
+    "Pilcuyo",
+    "Santa Rosa",
+    "Conduriri"
+  ],
+  "resumenDistritos": [
+    {
+      "distrito": "Ilave",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Capazo",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Pilcuyo",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Santa Rosa",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Conduriri",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    }
+  ],
+  "actas": []
+}
