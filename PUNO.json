@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:05:26.018Z",
+  "updatedAt": "2026-11-20T00:47:31.560Z",
   "departamento": "Puno",
   "provincia": "Puno",
   "distritos": [
@@ -18,6 +18,16 @@
     "San Antonio",
     "Tiquillaca",
     "Vilque"
+  ],
+  "mesasPadron": [],
+  "localesEsperados": [
+    {
+      "provincia": "Puno",
+      "distrito": "Puno",
+      "colegio": "I.E. Gran Unidad Escolar San Carlos",
+      "mesasEst": 25,
+      "mesasCodigos": ""
+    }
   ],
   "resumenDistritos": [
     {
@@ -54,11 +64,11 @@
     },
     {
       "distrito": "Capachica",
-      "totalActas": 0,
-      "pandia": 0,
-      "jp": 0,
-      "blancos": 0,
-      "nulos": 0
+      "totalActas": 1,
+      "pandia": 190,
+      "jp": 50,
+      "blancos": 50,
+      "nulos": 10
     },
     {
       "distrito": "Chucuito",
@@ -141,5 +151,24 @@
       "nulos": 0
     }
   ],
-  "actas": []
+  "actas": [
+    {
+      "departamento": "Puno",
+      "provincia": "Puno",
+      "distrito": "Capachica",
+      "colegio": "I.E. Túpac Amaru",
+      "mesa": "0000182",
+      "responsable": "NORMAN JEAN",
+      "pdfUrl": "https://drive.google.com/file/d/1PvWDM8gHzjVz_rpeDQNTUN8QdbNINouY/view?usp=sharing",
+      "invalidated": false,
+      "observed": false,
+      "incidentNote": "",
+      "votos": {
+        "pandia": 190,
+        "jp": 50,
+        "blancos": 50,
+        "nulos": 10
+      }
+    }
+  ]
 }
