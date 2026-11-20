@@ -1,1 +1,73 @@
-
+{
+  "updatedAt": "2026-11-20T00:05:32.591Z",
+  "departamento": "Puno",
+  "provincia": "Chucuito",
+  "distritos": [
+    "Juli",
+    "Desaguadero",
+    "Huacullani",
+    "Kelluyo",
+    "Pisacoma",
+    "Pomata",
+    "Zepita"
+  ],
+  "resumenDistritos": [
+    {
+      "distrito": "Juli",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Desaguadero",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Huacullani",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Kelluyo",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Pisacoma",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Pomata",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Zepita",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    }
+  ],
+  "actas": []
+}
