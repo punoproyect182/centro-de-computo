@@ -1,1 +1,55 @@
-
+{
+  "updatedAt": "2026-11-20T00:05:27.688Z",
+  "departamento": "Puno",
+  "provincia": "San Román",
+  "distritos": [
+    "Juliaca",
+    "Cabana",
+    "Cabanillas",
+    "Caracoto",
+    "San Miguel"
+  ],
+  "resumenDistritos": [
+    {
+      "distrito": "Juliaca",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Cabana",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Cabanillas",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "Caracoto",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    },
+    {
+      "distrito": "San Miguel",
+      "totalActas": 0,
+      "pandia": 0,
+      "jp": 0,
+      "blancos": 0,
+      "nulos": 0
+    }
+  ],
+  "actas": []
+}
