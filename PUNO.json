@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:47:31.560Z",
+  "updatedAt": "2026-11-20T00:51:33.234Z",
   "departamento": "Puno",
   "provincia": "Puno",
   "distritos": [
@@ -64,11 +64,11 @@
     },
     {
       "distrito": "Capachica",
-      "totalActas": 1,
-      "pandia": 190,
-      "jp": 50,
-      "blancos": 50,
-      "nulos": 10
+      "totalActas": 2,
+      "pandia": 380,
+      "jp": 60,
+      "blancos": 140,
+      "nulos": 20
     },
     {
       "distrito": "Chucuito",
@@ -167,6 +167,24 @@
         "pandia": 190,
         "jp": 50,
         "blancos": 50,
+        "nulos": 10
+      }
+    },
+    {
+      "departamento": "Puno",
+      "provincia": "Puno",
+      "distrito": "Capachica",
+      "colegio": "I.E. Santa Rosa",
+      "mesa": "324324324",
+      "responsable": "CARLOS SANTANA",
+      "pdfUrl": "",
+      "invalidated": false,
+      "observed": false,
+      "incidentNote": "",
+      "votos": {
+        "pandia": 190,
+        "jp": 10,
+        "blancos": 90,
         "nulos": 10
       }
     }
