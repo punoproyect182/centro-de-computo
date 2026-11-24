@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T21:13:47.940Z",
+  "updatedAt": "2026-11-24T21:15:27.714Z",
   "departamento": "Puno",
   "provincia": "Puno",
   "distritos": [
@@ -80,11 +80,11 @@
     },
     {
       "distrito": "Coata",
-      "totalActas": 0,
-      "pandia": 0,
-      "jp": 0,
-      "blancos": 0,
-      "nulos": 0
+      "totalActas": 1,
+      "pandia": 210,
+      "jp": 80,
+      "blancos": 5,
+      "nulos": 3
     },
     {
       "distrito": "Huata",
@@ -222,6 +222,24 @@
         "jp": 50,
         "blancos": 50,
         "nulos": 49
+      }
+    },
+    {
+      "departamento": "Puno",
+      "provincia": "Puno",
+      "distrito": "Coata",
+      "colegio": "I.E. Comercio 32",
+      "mesa": "346789",
+      "responsable": "paolo guzman",
+      "pdfUrl": "https://drive.google.com/file/d/1PvWDM8gHzjVz_rpeDQNTUN8QdbNINouY/view",
+      "invalidated": false,
+      "observed": false,
+      "incidentNote": "",
+      "votos": {
+        "pandia": 210,
+        "jp": 80,
+        "blancos": 5,
+        "nulos": 3
       }
     }
   ]
