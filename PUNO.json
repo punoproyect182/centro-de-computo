@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T16:54:43.878Z",
+  "updatedAt": "2026-11-24T21:13:47.940Z",
   "departamento": "Puno",
   "provincia": "Puno",
   "distritos": [
@@ -144,11 +144,11 @@
     },
     {
       "distrito": "Vilque",
-      "totalActas": 0,
-      "pandia": 0,
-      "jp": 0,
-      "blancos": 0,
-      "nulos": 0
+      "totalActas": 1,
+      "pandia": 147,
+      "jp": 50,
+      "blancos": 50,
+      "nulos": 49
     }
   ],
   "actas": [
@@ -204,6 +204,24 @@
         "jp": 70,
         "blancos": 20,
         "nulos": 30
+      }
+    },
+    {
+      "departamento": "Puno",
+      "provincia": "Puno",
+      "distrito": "Vilque",
+      "colegio": "I.E. Santa Rosa",
+      "mesa": "453636",
+      "responsable": "Personero",
+      "pdfUrl": "https://drive.google.com/file/d/1PvWDM8gHzjVz_rpeDQNTUN8QdbNINouY/view",
+      "invalidated": false,
+      "observed": false,
+      "incidentNote": "",
+      "votos": {
+        "pandia": 147,
+        "jp": 50,
+        "blancos": 50,
+        "nulos": 49
       }
     }
   ]
