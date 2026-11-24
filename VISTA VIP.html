@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala Situacional VIP 2026 - Pandia & Yannina | Ahora Nación Puno</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
+
+        /* Gradiente animado VIP */
+        .vip-gradient-bg {
+            background: linear-gradient(-45deg, #7f1d1d, #b91c1c, #dc2626, #991b1b, #0f172a);
+            background-size: 400% 400%;
+            animation: gradientBG 14s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.13);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.24);
+        }
+
+        /* Barra de progreso viva con haz de luz en crecimiento */
+        .progress-beam-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .progress-beam-fill {
+            position: relative;
+            overflow: hidden;
+            transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .progress-beam-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -60%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), rgba(253, 224, 71, 0.85), transparent);
+            animation: beamSweep 1.8s infinite linear;
+        }
+        .progress-beam-tip {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: #fef08a;
+            box-shadow: 0 0 14px #fde047, 0 0 24px #ffffff;
+            border-radius: 9999px;
+        }
+        @keyframes beamSweep {
+            0% { left: -60%; }
+            100% { left: 120%; }
+        }
+
+        /* Caja Neón Esmeralda con Pandita Animado */
+        @keyframes neonPulseGreen {
+            0%, 100% {
+                box-shadow: 0 0 14px rgba(16, 185, 129, 0.38), inset 0 0 8px rgba(16, 185, 129, 0.15);
+                border-color: #34d399;
+            }
+            50% {
+                box-shadow: 0 0 26px rgba(16, 185, 129, 0.72), inset 0 0 14px rgba(16, 185, 129, 0.28);
+                border-color: #10b981;
+            }
+        }
+        @keyframes panditaBounce {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50% { transform: translateY(-5px) rotate(3deg); }
+        }
+        .neon-valid-card {
+            animation: neonPulseGreen 2.2s infinite ease-in-out;
+        }
+        .pandita-animated {
+            animation: panditaBounce 1.8s infinite ease-in-out;
+            filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.75));
+        }
+
+        /* Panda Header */
+        .panda-container {
+            position: absolute;
+            bottom: 6px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.35));
+            transition: transform 0.3s ease-out;
+        }
+        .arm-wave {
+            animation: waveCute 0.4s infinite alternate ease-in-out;
+            transform-origin: 140px 125px;
+        }
+        @keyframes waveCute {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-35deg); }
+        }
+        .panda-idle {
+            animation: gentleSway 2s infinite alternate ease-in-out;
+        }
+        @keyframes gentleSway {
+            0% { transform: translateY(0px) rotate(-1.5deg); }
+            100% { transform: translateY(-4px) rotate(1.5deg); }
+        }
+        .panda-jump {
+            animation: pandaJumpAnim 0.7s ease-in-out !important;
+        }
+        @keyframes pandaJumpAnim {
+            0% { transform: translateY(0) scale(1); }
+            40% { transform: translateY(-35px) scale(1.08); }
+            60% { transform: translateY(-35px) scale(1.08); }
+            100% { transform: translateY(0) scale(1); }
+        }
+        .speech-bubble {
+            position: absolute;
+            top: -46px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            color: #0f172a;
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 800;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            z-index: 30;
+            border: 2px solid #dc2626;
+        }
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -7px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 7px 7px 0;
+            border-style: solid;
+            border-color: #dc2626 transparent;
+        }
+        .speech-bubble.active {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        /* Modo Oscuro VIP */
+        body.dark-mode {
+            background-color: #020617;
+            color: #f1f5f9;
+        }
+        body.dark-mode .bg-white {
+            background-color: #0f172a !important;
+            border-color: #1e293b !important;
+            color: #f1f5f9;
+        }
+        body.dark-mode .bg-slate-50,
+        body.dark-mode .bg-slate-50\/80,
+        body.dark-mode .bg-slate-100 {
+            background-color: #1e293b !important;
+            border-color: #334155 !important;
+            color: #e2e8f0;
+        }
+        body.dark-mode .text-slate-900,
+        body.dark-mode .text-slate-800 {
+            color: #f8fafc !important;
+        }
+        body.dark-mode .text-slate-700,
+        body.dark-mode .text-slate-600 {
+            color: #e2e8f0 !important;
+        }
+        body.dark-mode .text-slate-500,
+        body.dark-mode .text-slate-400 {
+            color: #cbd5e1 !important;
+        }
+        body.dark-mode .bg-red-50,
+        body.dark-mode .bg-red-50\/80 {
+            background-color: rgba(153, 27, 27, 0.28) !important;
+            border-color: rgba(248, 113, 113, 0.35) !important;
+        }
+        body.dark-mode .bg-amber-50,
+        body.dark-mode .bg-amber-100 {
+            background-color: rgba(146, 64, 14, 0.3) !important;
+            border-color: rgba(251, 191, 36, 0.35) !important;
+            color: #fde68a !important;
+        }
+        body.dark-mode .hover\:bg-slate-50:hover,
+        body.dark-mode .hover\:bg-red-50\/40:hover {
+            background-color: #1e293b !important;
+        }
+        body.dark-mode .border-slate-200,
+        body.dark-mode .border-slate-100,
+        body.dark-mode .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+            border-color: #1e293b !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased min-h-screen flex flex-col transition-colors duration-200">
+
+    <!-- ==================== BARRA SUPERIOR VIP (DISCRETA Y EJECUTIVA) ==================== -->
+    <div class="bg-[#0F172A] text-white border-b border-slate-800 sticky top-0 z-40 shadow-md">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-[#D91B24] flex items-center justify-center shadow-xs">
+                    <svg class="w-5 h-5" viewBox="0 0 64 48" fill="none">
+                        <path d="M8 34C8 19 18 10 32 10C46 10 56 19 56 34H8Z" fill="#FFFFFF"/>
+                        <path d="M4 34H60C61.5 34 62 37 59 38.5C46 42 18 42 5 38.5C2 37 2.5 34 4 34Z" fill="#FFFFFF"/>
+                        <path d="M25 11V33M39 11V33" stroke="#D91B24" stroke-width="2.5"/>
+                    </svg>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs sm:text-sm font-black tracking-wide uppercase text-white">AHORA NACIÓN • PUNO 2026</span>
+                    <span class="inline-flex items-center gap-1 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-2xs">
+                        <i class="fa-solid fa-crown"></i> Sala VIP
+                    </span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button onclick="toggleDarkMode()" id="btnThemeToggle" title="Cambiar entre Tema Claro y Tema Oscuro"
+                    class="bg-white/10 hover:bg-white/20 active:scale-95 text-amber-300 px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition border border-white/15 cursor-pointer">
+                    <i id="themeIcon" class="fa-solid fa-moon"></i>
+                    <span id="themeText" class="hidden sm:inline">Oscuro</span>
+                </button>
+
+                <div id="syncStatusBadge"
+                    class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-xl text-xs font-bold border border-white/15 select-none">
+                    <span id="syncDot" class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                    <span id="syncText" class="text-white">Conectando...</span>
+                </div>
+
+                <button onclick="syncFromGitHub()" title="Actualizar resultados ahora"
+                    class="bg-[#D91B24] hover:bg-red-700 active:scale-95 text-white px-3 py-1.5 rounded-xl text-xs font-extrabold flex items-center gap-1.5 transition shadow-xs cursor-pointer">
+                    <i class="fa-solid fa-rotate"></i>
+                    <span class="hidden sm:inline">Actualizar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== HEADER ANIMADO VIP ==================== -->
+    <header id="mainAnimatedHeader" class="w-full relative overflow-hidden vip-gradient-bg border-b-4 border-amber-400 shadow-xl min-h-[230px] sm:min-h-[260px] flex items-center justify-between px-4 sm:px-8 py-6 select-none text-white">
+        <canvas id="interactiveCanvas" class="absolute inset-0 w-full h-full pointer-events-auto z-0"></canvas>
+
+        <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-between relative z-10 gap-5 pr-0 md:pr-36">
+            <div class="text-center md:text-left flex flex-col items-center md:items-start space-y-2">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-amber-300 text-xs sm:text-sm font-extrabold tracking-wider shadow-inner border border-amber-300/40 uppercase">
+                    <i class="fa-solid fa-star text-amber-300 animate-pulse"></i>
+                    <span>EDUARDO PANDIA • YANNINA ARIAS</span>
+                </div>
+
+                <h1 class="text-3xl sm:text-5xl font-black text-white font-montserrat tracking-tight leading-none drop-shadow-md">
+                    AHORA <span class="text-amber-300 underline decoration-white underline-offset-4">NACIÓN</span>
+                </h1>
+
+                <p class="text-xs sm:text-sm text-red-100 font-semibold">
+                    Reporte Ejecutivo de Resultados Electorales • Región Puno (Segunda Vuelta 2026)
+                </p>
+            </div>
+
+            <!-- Resumen Rápido en Header -->
+            <div class="glass-card p-4 sm:p-5 rounded-2xl flex items-center gap-4 sm:gap-6 shadow-2xl border border-white/25">
+                <div class="text-center">
+                    <p class="text-[11px] uppercase tracking-wider text-red-100 font-bold">Actas Procesadas</p>
+                    <div class="flex items-center justify-center gap-2 mt-0.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                        <p id="liveProgressText" class="text-2xl sm:text-4xl font-extrabold text-amber-300 font-montserrat">0.0%</p>
+                    </div>
+                    <span id="liveActasSubtext" class="text-[11px] font-semibold text-red-100">0 de 600 mesas</span>
+                </div>
+                <div class="h-12 w-[1px] bg-white/30"></div>
+                <div class="text-center">
+                    <p class="text-[11px] uppercase tracking-wider text-red-100 font-bold">Cobertura</p>
+                    <p id="headerDistrictsCount" class="text-xl sm:text-2xl font-black text-white mt-0.5">0 / 110</p>
+                    <span class="text-[10px] font-bold uppercase text-emerald-300">Distritos activos</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANDA INTERACTIVO -->
+        <div id="pandaCharacter" class="panda-container panda-idle right-3 sm:right-8 bottom-1 z-20 cursor-pointer" title="¡Haz clic en el panda!">
+            <div id="speechBubble" class="speech-bubble">¡Adelante Ahora Nación! 🐼</div>
+            <svg width="130" height="150" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <ellipse cx="100" cy="206" rx="46" ry="8" fill="#000000" opacity="0.25" />
+                    <ellipse cx="75" cy="188" rx="14" ry="18" fill="#1E293B" />
+                    <ellipse cx="75" cy="202" rx="15" ry="7" fill="#0F172A" />
+                    <ellipse cx="125" cy="188" rx="14" ry="18" fill="#1E293B" />
+                    <ellipse cx="125" cy="202" rx="15" ry="7" fill="#0F172A" />
+                    <rect x="42" y="125" width="20" height="44" rx="10" fill="#1E293B" transform="rotate(12 42 125)"/>
+                    <g class="arm-wave">
+                        <rect x="138" y="118" width="20" height="46" rx="10" fill="#1E293B"/>
+                        <circle cx="148" cy="115" r="9" fill="#1E293B"/>
+                    </g>
+                    <ellipse cx="100" cy="152" rx="46" ry="40" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+                    <ellipse cx="100" cy="154" rx="33" ry="28" fill="#F8FAFC"/>
+                    <circle cx="48" cy="48" r="22" fill="#1E293B" />
+                    <circle cx="48" cy="48" r="11" fill="#475569" />
+                    <circle cx="152" cy="48" r="22" fill="#1E293B" />
+                    <circle cx="152" cy="48" r="11" fill="#475569" />
+                    <ellipse cx="100" cy="85" rx="58" ry="50" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2.5"/>
+                    <ellipse cx="72" cy="84" rx="16" ry="19" fill="#1E293B" transform="rotate(-12 72 84)"/>
+                    <ellipse cx="128" cy="84" rx="16" ry="19" fill="#1E293B" transform="rotate(12 128 84)"/>
+                    <g id="pandaEyesFront">
+                        <circle cx="74" cy="82" r="7.5" fill="#FFFFFF" />
+                        <circle id="pupilLeftFront" cx="74" cy="82" r="4" fill="#0F172A" />
+                        <circle cx="77" cy="79" r="2" fill="#FFFFFF" />
+                        <circle cx="126" cy="82" r="7.5" fill="#FFFFFF" />
+                        <circle id="pupilRightFront" cx="126" cy="82" r="4" fill="#0F172A" />
+                        <circle cx="129" cy="79" r="2" fill="#FFFFFF" />
+                    </g>
+                    <path d="M94 92 C94 89, 106 89, 106 92 C106 96, 94 96, 94 92 Z" fill="#1E293B"/>
+                    <path d="M85 100 Q100 114 115 100" stroke="#1E293B" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                    <ellipse cx="58" cy="98" rx="8" ry="5" fill="#F472B6" opacity="0.8"/>
+                    <ellipse cx="142" cy="98" rx="8" ry="5" fill="#F472B6" opacity="0.8"/>
+                </g>
+            </svg>
+        </div>
+    </header>
+
+    <!-- ==================== CONTENEDOR PRINCIPAL ==================== -->
+    <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6 flex-1">
+
+        <!-- MARCADOR EJECUTIVO REGIONAL -->
+        <section class="bg-white rounded-3xl shadow-sm border border-slate-200 p-5 sm:p-7 space-y-5">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+                <div>
+                    <span class="text-xs font-black uppercase tracking-widest text-[#D91B24]">Proyección Oficial • Región Puno</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 font-montserrat tracking-tight mt-0.5">AHORA NACIÓN</h2>
+                </div>
+
+                <!-- TARJETA NEÓN CON PANDITA: VOTOS EXCLUSIVOS DE AHORA NACIÓN -->
+                <div class="neon-valid-card flex items-center gap-3.5 bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 text-white px-5 py-3 rounded-2xl border-2 border-emerald-300 shadow-lg">
+                    <svg class="w-12 h-12 shrink-0 pandita-animated" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="38" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="2.5"/>
+                        <circle cx="22" cy="24" r="8" fill="#1E293B"/>
+                        <circle cx="58" cy="24" r="8" fill="#1E293B"/>
+                        <circle cx="40" cy="42" r="20" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.5"/>
+                        <ellipse cx="32" cy="40" rx="5" ry="6.5" fill="#1E293B"/>
+                        <ellipse cx="48" cy="40" rx="5" ry="6.5" fill="#1E293B"/>
+                        <circle cx="33" cy="38" r="1.8" fill="#FFFFFF"/>
+                        <circle cx="49" cy="38" r="1.8" fill="#FFFFFF"/>
+                        <ellipse cx="40" cy="47" rx="3.5" ry="2.5" fill="#1E293B"/>
+                        <path d="M35 51Q40 55 45 51" stroke="#1E293B" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M22 28C22 17 30 12 40 12C50 12 58 17 58 28H22Z" fill="#D91B24"/>
+                        <path d="M18 28H62" stroke="#991B1B" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M25 60C28 54 52 54 55 60L58 72H22L25 60Z" fill="#D91B24"/>
+                    </svg>
+                    <div class="text-right">
+                        <span class="text-[11px] font-black uppercase tracking-wider text-emerald-100 block">Votos Ahora Nación</span>
+                        <span id="pandiaExclusiveVotes" class="text-2xl sm:text-4xl font-black text-white leading-none">0</span>
+                        <span id="totalValidSubtitle" class="block text-[11px] font-bold text-emerald-100 mt-1">de 0 votos válidos totales</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barras Comparativas con Barra de Luz Animada -->
+            <div class="space-y-5">
+                <!-- AHORA NACIÓN -->
+                <div>
+                    <div class="flex justify-between items-end mb-2">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-4 h-4 rounded-full bg-[#D91B24] inline-block shadow-xs animate-pulse"></span>
+                            <div>
+                                <span class="font-black text-slate-900 text-lg sm:text-xl tracking-tight">AHORA NACIÓN</span>
+                                <span class="ml-2 text-xs font-extrabold px-2.5 py-0.5 rounded-md bg-red-50 text-[#D91B24] border border-red-200">Eduardo Pandia &amp; Yannina Arias</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span id="pctCand1" class="text-3xl sm:text-4xl font-black text-[#D91B24] font-montserrat">0.00%</span>
+                            <span id="votesCand1" class="block text-xs font-extrabold text-slate-600">0 votos</span>
+                        </div>
+                    </div>
+                    <!-- Barra Interactiva con Haz de Luz en Crecimiento -->
+                    <div class="w-full bg-slate-100 rounded-full h-7 overflow-hidden p-1 border border-slate-200 progress-beam-container shadow-inner">
+                        <div id="barCand1" class="bg-gradient-to-r from-[#991B1B] via-[#D91B24] to-[#EF4444] h-full rounded-full progress-beam-fill" style="width: 0%">
+                            <div class="progress-beam-tip"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTRINCANTE (Tono Plomo Discreto) -->
+                <div>
+                    <div class="flex justify-between items-end mb-1.5">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-3.5 h-3.5 rounded-full bg-slate-400 inline-block"></span>
+                            <div>
+                                <span class="font-bold text-slate-600 text-sm sm:text-base">JUNTOS POR EL PERÚ</span>
+                                <span class="ml-1.5 text-[11px] font-semibold px-2 py-0.5 rounded-md bg-slate-100 text-slate-500">Contrincante</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span id="pctCand2" class="text-xl sm:text-2xl font-extrabold text-slate-500">0.00%</span>
+                            <span id="votesCand2" class="block text-xs font-semibold text-slate-400">0 votos</span>
+                        </div>
+                    </div>
+                    <div class="w-full bg-slate-100 rounded-full h-4 overflow-hidden p-0.5 border border-slate-200">
+                        <div id="barCand2" class="bg-slate-400 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ALERTA DE VIRTUAL GANADOR Y ESCENARIOS (Cuando alcanza umbral matemático) -->
+            <div id="scenariosSection" class="hidden pt-4 border-t-2 border-red-100 space-y-3">
+                <div id="virtualWinnerAlert" class="hidden rounded-2xl bg-gradient-to-r from-[#D91B24] via-red-600 to-[#0B4F9F] text-white p-4 sm:p-5 shadow-lg border-2 border-amber-300">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center font-black text-2xl shrink-0 shadow-md">🏆</div>
+                        <div>
+                            <span class="inline-block bg-amber-300 text-slate-950 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-md tracking-wider">Tendencia Matemática Irreversible</span>
+                            <h4 class="text-lg sm:text-xl font-black leading-tight mt-1">¡VIRTUAL GANADOR REGIONAL PUNO!</h4>
+                            <p id="virtualWinnerSubtitle" class="text-xs sm:text-sm text-red-100 mt-0.5">Ahora Nación alcanza una ventaja matemáticamente inalcanzable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="scenarioExplanationBox" class="bg-slate-900 text-slate-100 rounded-2xl p-4 text-xs sm:text-sm leading-relaxed border border-slate-700"></div>
+            </div>
+
+            <!-- Resumen Secundario -->
+            <div class="pt-3 border-t border-slate-100 flex flex-wrap justify-between items-center text-xs text-slate-500 gap-2">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <span>Ventaja actual: <strong id="voteDiffLabel" class="text-emerald-600 font-black">+0 votos</strong></span> •
+                    <span>Blancos: <strong id="votesBlank" class="text-slate-700">0</strong></span> •
+                    <span>Nulos: <strong id="votesNull" class="text-slate-700">0</strong></span> •
+                    <span>Mesas Faltantes: <strong id="missingActasCount" class="text-amber-600">600</strong></span>
+                </div>
+                <span class="text-[11px] font-semibold text-slate-400">Actualización automática cada 30 seg.</span>
+            </div>
+        </section>
+
+        <!-- ==================== EXPLORADOR JERÁRQUICO EN PANTALLA COMPLETA (SIN VENTANAS FLOTANTES) ==================== -->
+        <section class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+
+            <!-- BARRA DE NAVEGACIÓN / BREADCRUMB Y BOTÓN ATRÁS -->
+            <div id="drilldownHeaderBar" class="bg-gradient-to-r from-red-50 via-white to-red-50/60 border-b-2 border-[#D91B24]/30 px-4 sm:px-6 py-4 space-y-3 transition-colors duration-300">
+                <!-- Indicador Visual de Pasos (Submenús) -->
+                <div class="flex flex-wrap items-center gap-1.5 text-[11px] font-extrabold">
+                    <button onclick="jumpToLevel('provinces')" id="stepPillProvinces"
+                        class="px-2.5 py-1 rounded-lg bg-[#D91B24] text-white shadow-2xs transition cursor-pointer">
+                        1. Provincias
+                    </button>
+                    <i class="fa-solid fa-chevron-right text-slate-400 text-[9px]"></i>
+                    <span id="stepPillDistricts"
+                        class="px-2.5 py-1 rounded-lg bg-slate-200/80 text-slate-500 transition">
+                        2. Distritos
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-slate-400 text-[9px]"></i>
+                    <span id="stepPillSchools"
+                        class="px-2.5 py-1 rounded-lg bg-slate-200/80 text-slate-500 transition">
+                        3. Colegios
+                    </span>
+                    <i class="fa-solid fa-chevron-right text-slate-400 text-[9px]"></i>
+                    <span id="stepPillMesas"
+                        class="px-2.5 py-1 rounded-lg bg-slate-200/80 text-slate-500 transition">
+                        4. Mesas
+                    </span>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex items-center gap-3">
+                        <button id="btnNavBack" onclick="navigateBack()"
+                            class="hidden bg-slate-900 hover:bg-slate-800 active:scale-95 text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold flex items-center gap-2 shadow-md transition cursor-pointer">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <span id="btnNavBackText">Atrás</span>
+                        </button>
+
+                        <div>
+                            <div id="breadcrumbTrail" class="text-[11px] font-black uppercase tracking-wider text-[#D91B24]">
+                                Región Puno • 13 Provincias
+                            </div>
+                            <h3 id="drilldownTitle" class="text-lg sm:text-2xl font-black text-slate-900 font-montserrat">
+                                Resultados Enumerados por Provincia
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- Buscador Contextual -->
+                    <div class="w-full sm:w-72">
+                        <div class="relative">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                            <input type="text" id="drilldownSearch" oninput="renderCurrentScreen()" placeholder="Filtrar en esta vista..."
+                                class="w-full rounded-xl border border-slate-300 bg-white pl-9 pr-3.5 py-2.5 text-xs sm:text-sm font-medium focus:border-[#D91B24] focus:outline-none shadow-2xs">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANTALLA 1: LISTA ENUMERADA DE LAS 13 PROVINCIAS -->
+            <div id="screenProvinces" class="p-4 sm:p-6">
+                <div id="provincesListContainer" class="space-y-3"></div>
+            </div>
+
+            <!-- PANTALLA 2: LISTA ENUMERADA DE DISTRITOS DE LA PROVINCIA SELECCIONADA -->
+            <div id="screenDistricts" class="p-4 sm:p-6 hidden space-y-4">
+                <div id="provinceSummaryBanner" class="bg-red-50 border border-red-200 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3"></div>
+                <div id="districtsListContainer" class="space-y-2.5"></div>
+            </div>
+
+            <!-- PANTALLA 3: LISTA ENUMERADA DE INSTITUCIONES EDUCATIVAS (COLEGIOS) DEL DISTRITO -->
+            <div id="screenSchools" class="p-4 sm:p-6 hidden space-y-4">
+                <div id="districtSummaryBanner" class="bg-red-50 border border-red-200 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3"></div>
+                <div id="schoolsListContainer" class="space-y-2.5"></div>
+            </div>
+
+            <!-- PANTALLA 4: LISTA ENUMERADA DE MESAS Y ACTAS PDF DEL COLEGIO -->
+            <div id="screenMesas" class="p-4 sm:p-6 hidden space-y-4">
+                <div id="schoolSummaryBanner" class="bg-slate-50 border border-slate-200 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3"></div>
+                <div class="overflow-x-auto rounded-2xl border border-slate-200">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-50 border-b border-slate-200 text-[11px] font-extrabold uppercase text-slate-500">
+                                <th class="py-3 px-3 text-center w-12">#</th>
+                                <th class="py-3 px-3 text-center">N° Mesa</th>
+                                <th class="py-3 px-3 text-center text-[#D91B24]">Ahora Nación</th>
+                                <th class="py-3 px-3 text-center text-slate-600">J.P.</th>
+                                <th class="py-3 px-3 text-center">Blancos</th>
+                                <th class="py-3 px-3 text-center">Nulos</th>
+                                <th class="py-3 px-3 text-center">Acta Oficial</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mesasListContainer" class="divide-y divide-slate-100 text-xs sm:text-sm"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        // ==========================================
+        // 1. CATÁLOGO OFICIAL DE UBIGEO DE PUNO
+        // ==========================================
+        const PUNO_UBIGEO = {
+            "Puno": ["Puno", "Acora", "Amantaní", "Atuncolla", "Capachica", "Chucuito", "Coata", "Huata", "Mañazo", "Paucarcolla", "Pichacani", "Platería", "San Antonio", "Tiquillaca", "Vilque"],
+            "San Román": ["Juliaca", "Cabana", "Cabanillas", "Caracoto", "San Miguel"],
+            "Azángaro": ["Azángaro", "Achaya", "Arapa", "Asillo", "Caminaca", "Chupa", "José Domingo Choquehuanca", "Muñani", "Potoni", "Samán", "San Antón", "San José", "San Juan de Salinas", "Santiago de Pupuja", "Tirapata"],
+            "Carabaya": ["Macusani", "Ajoyani", "Ayapata", "Coasa", "Corani", "Crucero", "Ituata", "Ollachea", "San Gabán", "Usicayos"],
+            "Chucuito": ["Juli", "Desaguadero", "Huacullani", "Kelluyo", "Pisacoma", "Pomata", "Zepita"],
+            "El Collao": ["Ilave", "Capazo", "Pilcuyo", "Santa Rosa", "Conduriri"],
+            "Huancané": ["Huancané", "Cojata", "Huatasani", "Inchupalla", "Pusi", "Rosaspata", "Taraco", "Vilque Chico"],
+            "Lampa": ["Lampa", "Cabanilla", "Calapuja", "Nicasio", "Ocuviri", "Palca", "Paratía", "Pucará", "Santa Lucía", "Vilavila"],
+            "Melgar": ["Ayaviri", "Antauta", "Cupi", "Llalli", "Macari", "Nuñoa", "Orurillo", "Santa Rosa", "Umachiri"],
+            "Moho": ["Moho", "Conima", "Huayrapata", "Tilali"],
+            "San Antonio de Putina": ["Putina", "Ananea", "Pedro Vilca Apaza", "Quilcapuncu", "Sina"],
+            "Sandia": ["Sandia", "Cuyocuyo", "Limbani", "Patambuco", "Phara", "Quiaca", "San Juan del Oro", "Yanahuaya", "Alto Inambari", "San Pedro de Putina Punco"],
+            "Yunguyo": ["Yunguyo", "Anapia", "Copani", "Cuturapi", "Ollaraya", "Tinicachi", "Unicachi"]
+        };
+
+        function getProvinceFileCandidates(provincia) {
+            const upperNoAccents = provincia
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toUpperCase()
+                .trim();
+            const slug = provincia
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/[^a-z0-9]+/g, "_")
+                .replace(/^_|_$/g, "");
+            return [`${upperNoAccents}.json`, `data/${slug}.json`];
+        }
+
+        const REPO_CONFIG = Object.freeze({
+            token: "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",
+            owner: "punoproyect182",
+            repo: "centro-de-computo",
+            branch: "main",
+            metaMesas: 600
+        });
+
+        // ==========================================
+        // 2. ESTADO DE NAVEGACIÓN JERÁRQUICA
+        // ==========================================
+        let state = {
+            actas: [],
+            mesasPadron: [],
+            expectedPlaces: [],
+            viewLevel: "provinces", // 'provinces' | 'districts' | 'schools' | 'mesas'
+            selectedProvincia: null,
+            selectedDistrito: null,
+            selectedColegio: null
+        };
+
+        window.onload = async function () {
+            loadLocalCache();
+            applySavedTheme();
+            initInteractiveHeader();
+            updateGlobalDashboard();
+            await syncFromGitHub();
+            setInterval(syncFromGitHub, 30000);
+        };
+
+        function toggleDarkMode() {
+            const isDark = document.body.classList.toggle("dark-mode");
+            localStorage.setItem("pandia_puno_dark_mode", isDark ? "1" : "0");
+            updateThemeButtonUI(isDark);
+        }
+
+        function applySavedTheme() {
+            const isDark = localStorage.getItem("pandia_puno_dark_mode") === "1";
+            if (isDark) document.body.classList.add("dark-mode");
+            updateThemeButtonUI(isDark);
+        }
+
+        function updateThemeButtonUI(isDark) {
+            const icon = document.getElementById("themeIcon");
+            const text = document.getElementById("themeText");
+            if (icon) icon.className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+            if (text) text.textContent = isDark ? "Claro" : "Oscuro";
+        }
+
+        function setLiveIndicator(status, labelText) {
+            const dot = document.getElementById("syncDot");
+            const text = document.getElementById("syncText");
+            if (status === "connected") {
+                dot.className = "w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]";
+                text.textContent = labelText || "En Vivo";
+            } else if (status === "connecting") {
+                dot.className = "w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping";
+                text.textContent = labelText || "Actualizando...";
+            } else {
+                dot.className = "w-2.5 h-2.5 rounded-full bg-red-500";
+                text.textContent = labelText || "Sin señal";
+            }
+        }
+
+        function loadLocalCache() {
+            const saved = localStorage.getItem("pandia_puno_vip_cache");
+            if (saved) {
+                try {
+                    const parsed = JSON.parse(saved);
+                    state.actas = parsed.actas || [];
+                    state.mesasPadron = parsed.mesasPadron || [];
+                    state.expectedPlaces = parsed.expectedPlaces || [];
+                } catch (e) {}
+            }
+        }
+
+        function saveLocalCache() {
+            localStorage.setItem("pandia_puno_vip_cache", JSON.stringify({
+                actas: state.actas,
+                mesasPadron: state.mesasPadron,
+                expectedPlaces: state.expectedPlaces
+            }));
+        }
+
+        function base64ToUtf8(str) {
+            return decodeURIComponent(escape(atob(str)));
+        }
+
+        function normalizeActaItem(item) {
+            const votosObj = item.votos || {};
+            return {
+                provincia: item.provincia || "Puno",
+                distrito: item.distrito || "Puno",
+                colegio: item.colegio || "Institución Educativa",
+                mesa: String(item.mesa || "000000"),
+                votos1: parseInt(votosObj.pandia ?? item.votos1 ?? item.pandia ?? 0) || 0,
+                votos2: parseInt(votosObj.jp ?? item.votos2 ?? item.jp ?? 0) || 0,
+                blancos: parseInt(votosObj.blancos ?? item.blancos ?? 0) || 0,
+                nulos: parseInt(votosObj.nulos ?? item.nulos ?? 0) || 0,
+                pdfUrl: item.pdfUrl || "",
+                invalidated: Boolean(item.invalidated)
+            };
+        }
+
+        async function syncFromGitHub() {
+            const { token, owner, repo, branch } = REPO_CONFIG;
+            setLiveIndicator("connecting", "Actualizando...");
+            const allFiles = [];
+            Object.keys(PUNO_UBIGEO).forEach(prov => {
+                getProvinceFileCandidates(prov).forEach(path => allFiles.push({ prov, path }));
+            });
+
+            try {
+                const results = await Promise.all(allFiles.map(async ({ prov, path }) => {
+                    const url = `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURI(path)}?ref=${branch}&t=${Date.now()}`;
+                    const res = await fetch(url, {
+                        headers: { "Authorization": `Bearer ${token}`, "Accept": "application/vnd.github.v3+json" }
+                    });
+                    if (!res.ok) return { prov, actas: [], distritos: [], locales: [], mesasPadron: [] };
+                    const data = await res.json();
+                    if (!data.content || data.content.trim() === "") return { prov, actas: [], distritos: [], locales: [], mesasPadron: [] };
+                    try {
+                        const parsed = JSON.parse(base64ToUtf8(data.content));
+                        const arr = Array.isArray(parsed) ? parsed : (parsed.actas || []);
+                        return {
+                            prov,
+                            actas: arr.map(normalizeActaItem),
+                            distritos: Array.isArray(parsed.distritos) ? parsed.distritos : [],
+                            locales: Array.isArray(parsed.localesEsperados) ? parsed.localesEsperados : [],
+                            mesasPadron: Array.isArray(parsed.mesasPadron) ? parsed.mesasPadron : []
+                        };
+                    } catch (e) {
+                        return { prov, actas: [], distritos: [], locales: [], mesasPadron: [] };
+                    }
+                }));
+
+                const mergedActas = new Map();
+                const mergedLocales = new Map();
+                const mergedPadron = new Map();
+
+                results.forEach(({ prov, actas, distritos, locales, mesasPadron }) => {
+                    if (distritos && distritos.length && PUNO_UBIGEO[prov]) {
+                        PUNO_UBIGEO[prov] = Array.from(new Set([...PUNO_UBIGEO[prov], ...distritos]));
+                    }
+                    (locales || []).forEach(l => mergedLocales.set(`${l.provincia}-${l.distrito}-${l.colegio}`, l));
+                    (mesasPadron || []).forEach(m => mergedPadron.set(String(m.mesa), m));
+                    (actas || []).forEach(a => mergedActas.set(String(a.mesa), a));
+                });
+
+                state.actas = Array.from(mergedActas.values());
+                state.expectedPlaces = Array.from(mergedLocales.values());
+                state.mesasPadron = Array.from(mergedPadron.values());
+                saveLocalCache();
+                updateGlobalDashboard();
+                setLiveIndicator("connected", "En Vivo");
+            } catch (err) {
+                setLiveIndicator("error", "Sin señal");
+            }
+        }
+
+        // ==========================================
+        // 3. MARCADOR GLOBAL Y PROYECCIÓN
+        // ==========================================
+        function updateGlobalDashboard() {
+            let sum1 = 0, sum2 = 0, sumBlank = 0, sumNull = 0;
+            const activeDistricts = new Set();
+
+            state.actas.forEach(a => {
+                if (a.invalidated) return;
+                sum1 += a.votos1;
+                sum2 += a.votos2;
+                sumBlank += a.blancos;
+                sumNull += a.nulos;
+                activeDistricts.add(`${a.provincia}-${a.distrito}`);
+            });
+
+            const validTotal = sum1 + sum2;
+            const pct1 = validTotal > 0 ? ((sum1 / validTotal) * 100).toFixed(2) : "0.00";
+            const pct2 = validTotal > 0 ? ((sum2 / validTotal) * 100).toFixed(2) : "0.00";
+
+            // Tarjeta Neón Pandita: Votos exclusivos de Ahora Nación de X votos válidos totales
+            document.getElementById("pandiaExclusiveVotes").textContent = sum1.toLocaleString();
+            document.getElementById("totalValidSubtitle").textContent = `de ${validTotal.toLocaleString()} votos válidos totales`;
+
+            document.getElementById("votesCand1").textContent = `${sum1.toLocaleString()} votos`;
+            document.getElementById("votesCand2").textContent = `${sum2.toLocaleString()} votos`;
+            document.getElementById("pctCand1").textContent = `${pct1}%`;
+            document.getElementById("pctCand2").textContent = `${pct2}%`;
+            document.getElementById("barCand1").style.width = `${pct1}%`;
+            document.getElementById("barCand2").style.width = `${pct2}%`;
+
+            const diff = sum1 - sum2;
+            const diffEl = document.getElementById("voteDiffLabel");
+            diffEl.textContent = diff >= 0 ? `+${diff.toLocaleString()} votos` : `${diff.toLocaleString()} votos`;
+            diffEl.className = diff >= 0 ? "text-emerald-600 font-black" : "text-rose-600 font-black";
+
+            document.getElementById("votesBlank").textContent = sumBlank.toLocaleString();
+            document.getElementById("votesNull").textContent = sumNull.toLocaleString();
+
+            const countRec = state.actas.length;
+            const meta = REPO_CONFIG.metaMesas;
+            const pctActas = Math.min(100, (countRec / meta) * 100).toFixed(1);
+            const missingMesas = Math.max(0, meta - countRec);
+
+            document.getElementById("liveProgressText").textContent = `${pctActas}%`;
+            document.getElementById("liveActasSubtext").textContent = `${countRec} de ${meta} mesas`;
+            document.getElementById("headerDistrictsCount").textContent = `${activeDistricts.size} / 110`;
+            document.getElementById("missingActasCount").textContent = missingMesas;
+
+            // Evaluación automática de Virtual Ganador
+            const maxRemainingVotes = missingMesas * 300;
+            const isIrreversible = (countRec > 0 && sum1 > (sum2 + maxRemainingVotes));
+            const isNear = (countRec > 0 && diff > 0 && (parseFloat(pctActas) >= 85 || diff >= maxRemainingVotes * 0.65));
+
+            const scenariosSection = document.getElementById("scenariosSection");
+            const victoryAlert = document.getElementById("virtualWinnerAlert");
+            const expBox = document.getElementById("scenarioExplanationBox");
+
+            if (isIrreversible || isNear) {
+                scenariosSection.classList.remove("hidden");
+                victoryAlert.classList.toggle("hidden", !isIrreversible);
+                if (isIrreversible) {
+                    document.getElementById("virtualWinnerSubtitle").textContent = `Ventaja irreversible de +${diff.toLocaleString()} votos con el ${pctActas}% de actas contabilizadas.`;
+                }
+                const worstOpp = sum2 + maxRemainingVotes;
+                const worstTotal = sum1 + worstOpp;
+                const worstPct1 = worstTotal > 0 ? ((sum1 / worstTotal) * 100).toFixed(2) : "0.00";
+                expBox.innerHTML = isIrreversible
+                    ? `<strong class="text-emerald-400">✔ TRIUNFO MATEMÁTICO CONFIRMADO:</strong> Incluso asignando el 100% de las ${missingMesas} mesas faltantes (${maxRemainingVotes.toLocaleString()} votos) al contrincante, <strong>Ahora Nación</strong> mantiene el <strong>${worstPct1}%</strong> y resulta matemáticamente inalcanzable.`
+                    : `<strong class="text-amber-300">📊 PROYECCIÓN DE CIERRE:</strong> Con ${missingMesas} mesas pendientes (${maxRemainingVotes.toLocaleString()} votos máx.), Ahora Nación lidera con +${diff.toLocaleString()} votos de diferencia.`;
+            } else {
+                scenariosSection.classList.add("hidden");
+            }
+
+            renderCurrentScreen();
+        }
+
+        // ==========================================
+        // 4. NAVEGACIÓN JERÁRQUICA EN PANTALLAS COMPLETAS (CON BOTÓN ATRÁS)
+        // ==========================================
+        function openProvinceScreen(prov) {
+            state.viewLevel = "districts";
+            state.selectedProvincia = prov;
+            state.selectedDistrito = null;
+            state.selectedColegio = null;
+            document.getElementById("drilldownSearch").value = "";
+            renderCurrentScreen();
+        }
+
+        function openDistrictScreen(dist) {
+            state.viewLevel = "schools";
+            state.selectedDistrito = dist;
+            state.selectedColegio = null;
+            document.getElementById("drilldownSearch").value = "";
+            renderCurrentScreen();
+        }
+
+        function openSchoolScreen(colegio) {
+            state.viewLevel = "mesas";
+            state.selectedColegio = colegio;
+            document.getElementById("drilldownSearch").value = "";
+            renderCurrentScreen();
+        }
+
+        function navigateBack() {
+            document.getElementById("drilldownSearch").value = "";
+            if (state.viewLevel === "mesas") {
+                state.viewLevel = "schools";
+                state.selectedColegio = null;
+            } else if (state.viewLevel === "schools") {
+                state.viewLevel = "districts";
+                state.selectedDistrito = null;
+            } else if (state.viewLevel === "districts") {
+                state.viewLevel = "provinces";
+                state.selectedProvincia = null;
+            }
+            renderCurrentScreen();
+        }
+
+        function jumpToLevel(target) {
+            document.getElementById("drilldownSearch").value = "";
+            if (target === "provinces") {
+                state.viewLevel = "provinces";
+                state.selectedProvincia = null;
+                state.selectedDistrito = null;
+                state.selectedColegio = null;
+            } else if (target === "districts" && state.selectedProvincia) {
+                state.viewLevel = "districts";
+                state.selectedDistrito = null;
+                state.selectedColegio = null;
+            } else if (target === "schools" && state.selectedProvincia && state.selectedDistrito) {
+                state.viewLevel = "schools";
+                state.selectedColegio = null;
+            }
+            renderCurrentScreen();
+        }
+
+        function renderCurrentScreen() {
+            const q = (document.getElementById("drilldownSearch").value || "").toLowerCase();
+            const btnBack = document.getElementById("btnNavBack");
+            const btnBackText = document.getElementById("btnNavBackText");
+            const trail = document.getElementById("breadcrumbTrail");
+            const title = document.getElementById("drilldownTitle");
+            const headerBar = document.getElementById("drilldownHeaderBar");
+
+            const stepProv = document.getElementById("stepPillProvinces");
+            const stepDist = document.getElementById("stepPillDistricts");
+            const stepSch = document.getElementById("stepPillSchools");
+            const stepMesas = document.getElementById("stepPillMesas");
+
+            const inactivePill = "px-2.5 py-1 rounded-lg bg-slate-200/80 text-slate-500 transition";
+            const donePill = "px-2.5 py-1 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition cursor-pointer";
+
+            document.getElementById("screenProvinces").classList.toggle("hidden", state.viewLevel !== "provinces");
+            document.getElementById("screenDistricts").classList.toggle("hidden", state.viewLevel !== "districts");
+            document.getElementById("screenSchools").classList.toggle("hidden", state.viewLevel !== "schools");
+            document.getElementById("screenMesas").classList.toggle("hidden", state.viewLevel !== "mesas");
+
+            if (state.viewLevel === "provinces") {
+                btnBack.classList.add("hidden");
+                headerBar.className = "bg-gradient-to-r from-red-50 via-white to-red-50/70 border-b-2 border-[#D91B24]/40 px-4 sm:px-6 py-4 space-y-3 transition-colors duration-300";
+                trail.className = "text-[11px] font-black uppercase tracking-wider text-[#D91B24]";
+                trail.textContent = "Nivel 1 • Región Puno (13 Provincias)";
+                title.textContent = "Resultados Enumerados por Provincia";
+
+                stepProv.className = "px-2.5 py-1 rounded-lg bg-[#D91B24] text-white shadow-xs transition cursor-pointer";
+                stepDist.className = inactivePill;
+                stepDist.onclick = null;
+                stepSch.className = inactivePill;
+                stepSch.onclick = null;
+                stepMesas.className = inactivePill;
+
+                renderProvincesList(q);
+            } else if (state.viewLevel === "districts") {
+                btnBack.classList.remove("hidden");
+                btnBackText.textContent = "Volver a Provincias";
+                headerBar.className = "bg-gradient-to-r from-blue-50 via-white to-indigo-50/70 border-b-2 border-[#0B4F9F]/40 px-4 sm:px-6 py-4 space-y-3 transition-colors duration-300";
+                trail.className = "text-[11px] font-black uppercase tracking-wider text-[#0B4F9F]";
+                trail.textContent = `Nivel 2 • Provincia de ${state.selectedProvincia}`;
+                title.textContent = `Distritos de ${state.selectedProvincia}`;
+
+                stepProv.className = donePill;
+                stepDist.className = "px-2.5 py-1 rounded-lg bg-[#0B4F9F] text-white shadow-xs transition cursor-pointer";
+                stepDist.onclick = () => jumpToLevel("districts");
+                stepSch.className = inactivePill;
+                stepSch.onclick = null;
+                stepMesas.className = inactivePill;
+
+                renderDistrictsList(q);
+            } else if (state.viewLevel === "schools") {
+                btnBack.classList.remove("hidden");
+                btnBackText.textContent = `Volver a ${state.selectedProvincia}`;
+                headerBar.className = "bg-gradient-to-r from-emerald-50 via-white to-teal-50/70 border-b-2 border-emerald-600/40 px-4 sm:px-6 py-4 space-y-3 transition-colors duration-300";
+                trail.className = "text-[11px] font-black uppercase tracking-wider text-emerald-700";
+                trail.textContent = `Nivel 3 • ${state.selectedProvincia} › Distrito de ${state.selectedDistrito}`;
+                title.textContent = `Instituciones Educativas en ${state.selectedDistrito}`;
+
+                stepProv.className = donePill;
+                stepDist.className = donePill;
+                stepDist.onclick = () => jumpToLevel("districts");
+                stepSch.className = "px-2.5 py-1 rounded-lg bg-emerald-600 text-white shadow-xs transition cursor-pointer";
+                stepSch.onclick = () => jumpToLevel("schools");
+                stepMesas.className = inactivePill;
+
+                renderSchoolsList(q);
+            } else if (state.viewLevel === "mesas") {
+                btnBack.classList.remove("hidden");
+                btnBackText.textContent = `Volver a Colegios`;
+                headerBar.className = "bg-gradient-to-r from-amber-50 via-white to-orange-50/70 border-b-2 border-amber-500/50 px-4 sm:px-6 py-4 space-y-3 transition-colors duration-300";
+                trail.className = "text-[11px] font-black uppercase tracking-wider text-amber-700";
+                trail.textContent = `Nivel 4 • ${state.selectedProvincia} › ${state.selectedDistrito}`;
+                title.textContent = state.selectedColegio;
+
+                stepProv.className = donePill;
+                stepDist.className = donePill;
+                stepDist.onclick = () => jumpToLevel("districts");
+                stepSch.className = donePill;
+                stepSch.onclick = () => jumpToLevel("schools");
+                stepMesas.className = "px-2.5 py-1 rounded-lg bg-amber-600 text-white shadow-xs transition";
+
+                renderMesasList(q);
+            }
+        }
+
+        // Nivel 1: Provincias Enumeradas
+        function renderProvincesList(query) {
+            const container = document.getElementById("provincesListContainer");
+            const provs = Object.keys(PUNO_UBIGEO).filter(p => p.toLowerCase().includes(query));
+
+            container.innerHTML = provs.map((prov, idx) => {
+                const actasProv = state.actas.filter(a => !a.invalidated && a.provincia === prov);
+                const p1 = actasProv.reduce((s, a) => s + a.votos1, 0);
+                const p2 = actasProv.reduce((s, a) => s + a.votos2, 0);
+                const tot = p1 + p2;
+                const pct1 = tot > 0 ? ((p1 / tot) * 100).toFixed(1) : "0.0";
+                const distCount = (PUNO_UBIGEO[prov] || []).length;
+
+                return `
+                    <div onclick="openProvinceScreen('${prov}')"
+                        class="group rounded-2xl border-2 border-slate-200/90 hover:border-[#D91B24] bg-white hover:bg-red-50/30 p-4 sm:p-5 transition cursor-pointer shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="flex items-start sm:items-center gap-3.5 flex-1">
+                            <span class="w-9 h-9 rounded-xl bg-slate-900 group-hover:bg-[#D91B24] text-white font-black text-sm flex items-center justify-center shrink-0 transition shadow-xs">
+                                ${idx + 1}
+                            </span>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="font-black text-slate-900 text-base sm:text-lg group-hover:text-[#D91B24] transition">${prov}</h4>
+                                    <span class="text-xs font-black px-2 py-0.5 rounded-md ${tot > 0 ? 'bg-red-50 text-[#D91B24]' : 'bg-slate-100 text-slate-500'}">
+                                        ${tot > 0 ? pct1 + '%' : 'Sin votos'}
+                                    </span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5">${distCount} distritos • <strong>${actasProv.length}</strong> actas procesadas</p>
+                                <div class="w-full max-w-md bg-slate-100 rounded-full h-2 mt-2 overflow-hidden">
+                                    <div class="bg-[#D91B24] h-full rounded-full transition-all duration-500" style="width: ${tot > 0 ? pct1 : 0}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between md:justify-end gap-3 sm:gap-5 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100">
+                            <div class="flex sm:flex-col justify-between text-left sm:text-right">
+                                <span class="text-xs sm:text-sm font-black text-[#D91B24]">Ahora Nación: ${p1.toLocaleString()}</span>
+                                <span class="text-xs font-semibold text-slate-500">J.P.: ${p2.toLocaleString()}</span>
+                            </div>
+                            <button type="button"
+                                class="w-full sm:w-auto bg-gradient-to-r from-[#D91B24] to-red-700 group-hover:from-red-700 group-hover:to-red-800 text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 shadow-md group-hover:shadow-lg transition cursor-pointer">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                                <span>Ver Distritos (${distCount})</span>
+                                <i class="fa-solid fa-chevron-right text-[11px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        // Nivel 2: Distritos Enumerados de la Provincia
+        function renderDistrictsList(query) {
+            const prov = state.selectedProvincia;
+            const actasProv = state.actas.filter(a => !a.invalidated && a.provincia === prov);
+            const p1 = actasProv.reduce((s, a) => s + a.votos1, 0);
+            const p2 = actasProv.reduce((s, a) => s + a.votos2, 0);
+            const pTot = p1 + p2;
+            const pPct = pTot > 0 ? ((p1 / pTot) * 100).toFixed(2) : "0.00";
+
+            document.getElementById("provinceSummaryBanner").className = "bg-blue-50/90 border border-blue-200 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3";
+            document.getElementById("provinceSummaryBanner").innerHTML = `
+                <div>
+                    <span class="text-[11px] font-black uppercase text-[#0B4F9F]">Consolidado Provincial</span>
+                    <h4 class="text-base sm:text-lg font-black text-slate-900">${prov}: ${p1.toLocaleString()} votos Ahora Nación (${pPct}%)</h4>
+                </div>
+                <div class="text-xs font-bold text-slate-600">
+                    Contrincante: <strong>${p2.toLocaleString()}</strong> • Actas: <strong>${actasProv.length}</strong>
+                </div>
+            `;
+
+            const dists = (PUNO_UBIGEO[prov] || []).filter(d => d.toLowerCase().includes(query));
+            const container = document.getElementById("districtsListContainer");
+
+            container.innerHTML = dists.map((dist, idx) => {
+                const actasDist = actasProv.filter(a => a.distrito.toLowerCase() === dist.toLowerCase());
+                const d1 = actasDist.reduce((s, a) => s + a.votos1, 0);
+                const d2 = actasDist.reduce((s, a) => s + a.votos2, 0);
+                const dTot = d1 + d2;
+                const dPct = dTot > 0 ? ((d1 / dTot) * 100).toFixed(1) : "0.0";
+
+                const schoolsSet = new Set([
+                    ...actasDist.map(a => a.colegio),
+                    ...state.expectedPlaces.filter(e => e.provincia === prov && e.distrito.toLowerCase() === dist.toLowerCase()).map(e => e.colegio),
+                    ...state.mesasPadron.filter(m => m.provincia === prov && m.distrito.toLowerCase() === dist.toLowerCase()).map(m => m.colegio)
+                ]);
+
+                return `
+                    <div onclick="openDistrictScreen('${dist.replace(/'/g, "\\'")}')"
+                        class="group rounded-2xl border-2 border-slate-200/90 hover:border-[#0B4F9F] bg-white hover:bg-blue-50/30 p-4 sm:p-5 transition cursor-pointer shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="flex items-start sm:items-center gap-3.5 flex-1">
+                            <span class="w-9 h-9 rounded-xl bg-slate-800 group-hover:bg-[#0B4F9F] text-white font-black text-sm flex items-center justify-center shrink-0 transition shadow-xs">
+                                ${idx + 1}
+                            </span>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="font-extrabold text-slate-900 text-base sm:text-lg group-hover:text-[#0B4F9F] transition">${dist}</h4>
+                                    <span class="text-xs font-black px-2 py-0.5 rounded-md ${dTot > 0 ? 'bg-blue-50 text-[#0B4F9F]' : 'bg-slate-100 text-slate-500'}">
+                                        ${dTot > 0 ? dPct + '%' : 'Sin votos'}
+                                    </span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5">${schoolsSet.size} colegio(s) • <strong>${actasDist.length}</strong> mesa(s) contabilizadas</p>
+                                <div class="w-full max-w-md bg-slate-100 rounded-full h-2 mt-2 overflow-hidden">
+                                    <div class="bg-[#D91B24] h-full rounded-full transition-all duration-500" style="width: ${dTot > 0 ? dPct : 0}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between md:justify-end gap-3 sm:gap-5 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100">
+                            <div class="flex sm:flex-col justify-between text-left sm:text-right">
+                                <span class="text-xs sm:text-sm font-black text-[#D91B24]">Ahora Nación: ${d1.toLocaleString()}</span>
+                                <span class="text-xs font-semibold text-slate-500">J.P.: ${d2.toLocaleString()}</span>
+                            </div>
+                            <button type="button"
+                                class="w-full sm:w-auto bg-gradient-to-r from-[#0B4F9F] to-blue-700 group-hover:from-blue-700 group-hover:to-indigo-800 text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 shadow-md group-hover:shadow-lg transition cursor-pointer">
+                                <i class="fa-solid fa-school"></i>
+                                <span>Ver Colegios (${schoolsSet.size})</span>
+                                <i class="fa-solid fa-chevron-right text-[11px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        // Nivel 3: Colegios (Instituciones Educativas) Enumerados del Distrito
+        function renderSchoolsList(query) {
+            const prov = state.selectedProvincia;
+            const dist = state.selectedDistrito;
+            const actasDist = state.actas.filter(a => !a.invalidated && a.provincia === prov && a.distrito.toLowerCase() === dist.toLowerCase());
+            const d1 = actasDist.reduce((s, a) => s + a.votos1, 0);
+            const d2 = actasDist.reduce((s, a) => s + a.votos2, 0);
+
+            document.getElementById("districtSummaryBanner").className = "bg-emerald-50/90 border border-emerald-200 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3";
+            document.getElementById("districtSummaryBanner").innerHTML = `
+                <div>
+                    <span class="text-[11px] font-black uppercase text-emerald-700">Distrito de ${dist} (${prov})</span>
+                    <h4 class="text-base sm:text-lg font-black text-slate-900">Ahora Nación: ${d1.toLocaleString()} votos • J.P.: ${d2.toLocaleString()} votos</h4>
+                </div>
+                <span class="text-xs font-bold text-slate-600">${actasDist.length} mesas contabilizadas</span>
+            `;
+
+            const schoolsMap = new Map();
+            state.expectedPlaces.filter(e => e.provincia === prov && e.distrito.toLowerCase() === dist.toLowerCase()).forEach(e => {
+                schoolsMap.set(e.colegio, { colegio: e.colegio, expectedMesas: e.mesasEst || 0 });
+            });
+            state.mesasPadron.filter(m => m.provincia === prov && m.distrito.toLowerCase() === dist.toLowerCase()).forEach(m => {
+                if (!schoolsMap.has(m.colegio)) schoolsMap.set(m.colegio, { colegio: m.colegio, expectedMesas: 0 });
+            });
+            actasDist.forEach(a => {
+                if (!schoolsMap.has(a.colegio)) schoolsMap.set(a.colegio, { colegio: a.colegio, expectedMesas: 0 });
+            });
+
+            const schoolsList = Array.from(schoolsMap.values()).filter(s => s.colegio.toLowerCase().includes(query));
+            const container = document.getElementById("schoolsListContainer");
+
+            if (schoolsList.length === 0) {
+                container.innerHTML = `<div class="py-10 text-center text-slate-400 text-xs sm:text-sm">Aún no hay instituciones educativas registradas o con actas en ${dist}.</div>`;
+                return;
+            }
+
+            container.innerHTML = schoolsList.map((sch, idx) => {
+                const actasSch = actasDist.filter(a => a.colegio.toLowerCase() === sch.colegio.toLowerCase());
+                const padronSch = state.mesasPadron.filter(m => m.provincia === prov && m.distrito.toLowerCase() === dist.toLowerCase() && m.colegio.toLowerCase() === sch.colegio.toLowerCase());
+                const totalMesasRef = Math.max(sch.expectedMesas, padronSch.length, actasSch.length);
+                const s1 = actasSch.reduce((s, a) => s + a.votos1, 0);
+                const s2 = actasSch.reduce((s, a) => s + a.votos2, 0);
+                const sTot = s1 + s2;
+                const sPct = sTot > 0 ? ((s1 / sTot) * 100).toFixed(1) : "0.0";
+
+                return `
+                    <div onclick="openSchoolScreen('${sch.colegio.replace(/'/g, "\\'")}')"
+                        class="group rounded-2xl border-2 border-slate-200/90 hover:border-emerald-600 bg-white hover:bg-emerald-50/30 p-4 sm:p-5 transition cursor-pointer shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="flex items-start sm:items-center gap-3.5 flex-1">
+                            <span class="w-9 h-9 rounded-xl bg-emerald-700 group-hover:bg-emerald-600 text-white font-black text-sm flex items-center justify-center shrink-0 transition shadow-xs">
+                                ${idx + 1}
+                            </span>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <h4 class="font-extrabold text-slate-900 text-base sm:text-lg group-hover:text-emerald-700 transition">${sch.colegio}</h4>
+                                    <span class="text-xs font-black px-2 py-0.5 rounded-md ${sTot > 0 ? 'bg-emerald-50 text-emerald-700' : 'bg-slate-100 text-slate-500'}">
+                                        ${sTot > 0 ? sPct + '%' : 'Sin votos'}
+                                    </span>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5">
+                                    Mesas contabilizadas: <strong>${actasSch.length}</strong> ${totalMesasRef > 0 ? `de ${totalMesasRef} mesas` : ""}
+                                </p>
+                                <div class="w-full max-w-md bg-slate-100 rounded-full h-2 mt-2 overflow-hidden">
+                                    <div class="bg-[#D91B24] h-full rounded-full transition-all duration-500" style="width: ${sTot > 0 ? sPct : 0}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between md:justify-end gap-3 sm:gap-5 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100">
+                            <div class="flex sm:flex-col justify-between text-left sm:text-right">
+                                <span class="text-xs sm:text-sm font-black text-[#D91B24]">Ahora Nación: ${s1.toLocaleString()}</span>
+                                <span class="text-xs font-semibold text-slate-500">J.P.: ${s2.toLocaleString()}</span>
+                            </div>
+                            <button type="button"
+                                class="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-teal-700 group-hover:from-emerald-700 group-hover:to-teal-800 text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 shadow-md group-hover:shadow-lg transition cursor-pointer">
+                                <i class="fa-solid fa-table-list"></i>
+                                <span>Ver Mesas (${actasSch.length})</span>
+                                <i class="fa-solid fa-chevron-right text-[11px]"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        // Nivel 4: Mesas Enumeradas y Actas PDF del Colegio
+        function renderMesasList(query) {
+            const prov = state.selectedProvincia;
+            const dist = state.selectedDistrito;
+            const col = state.selectedColegio;
+
+            const actasSch = state.actas.filter(a =>
+                a.provincia === prov &&
+                a.distrito.toLowerCase() === dist.toLowerCase() &&
+                a.colegio.toLowerCase() === col.toLowerCase() &&
+                a.mesa.toLowerCase().includes(query)
+            );
+
+            const s1 = actasSch.filter(a => !a.invalidated).reduce((s, a) => s + a.votos1, 0);
+            const s2 = actasSch.filter(a => !a.invalidated).reduce((s, a) => s + a.votos2, 0);
+
+            document.getElementById("schoolSummaryBanner").innerHTML = `
+                <div>
+                    <span class="text-[11px] font-black uppercase text-slate-500">${dist} • ${prov}</span>
+                    <h4 class="text-sm sm:text-base font-black text-slate-900">Total Colegio — Ahora Nación: <span class="text-[#D91B24]">${s1.toLocaleString()}</span> | J.P.: ${s2.toLocaleString()}</h4>
+                </div>
+                <span class="text-xs font-extrabold bg-slate-900 text-white px-3 py-1 rounded-lg">${actasSch.length} mesas registradas</span>
+            `;
+
+            const tbody = document.getElementById("mesasListContainer");
+            if (actasSch.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="7" class="py-8 text-center text-slate-400 text-xs">No hay actas ingresadas aún para este colegio.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = actasSch.map((a, idx) => `
+                <tr class="${a.invalidated ? 'bg-rose-50/70' : 'hover:bg-slate-50'} transition">
+                    <td class="py-3 px-3 text-center font-bold text-slate-400">${idx + 1}</td>
+                    <td class="py-3 px-3 text-center font-mono font-black text-slate-900">
+                        ${a.mesa}
+                        ${a.invalidated ? `<span class="block text-[9px] font-black uppercase bg-rose-600 text-white px-1.5 py-0.5 rounded-sm mt-0.5">Anulada</span>` : ""}
+                    </td>
+                    <td class="py-3 px-3 text-center font-black text-[#D91B24] text-sm sm:text-base">${a.invalidated ? "—" : a.votos1}</td>
+                    <td class="py-3 px-3 text-center font-bold text-slate-600">${a.invalidated ? "—" : a.votos2}</td>
+                    <td class="py-3 px-3 text-center text-slate-500 font-semibold">${a.invalidated ? "—" : a.blancos}</td>
+                    <td class="py-3 px-3 text-center text-slate-500 font-semibold">${a.invalidated ? "—" : a.nulos}</td>
+                    <td class="py-3 px-3 text-center">
+                        ${a.pdfUrl
+                            ? `<a href="${a.pdfUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#D91B24] hover:text-red-800 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-xl border border-red-200 transition shadow-2xs">
+                                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none">
+                                    <rect x="2" y="2" width="20" height="20" rx="4" fill="#D91B24"/>
+                                    <path d="M12.2 6.5C11.7 6.5 11.4 7.3 11.6 8.5C11.8 9.8 12.6 11.5 13.7 12.8C14.7 13.9 16.1 14.7 17.2 14.7C17.8 14.7 18.1 14.3 18 13.8C17.8 13.2 16.7 12.9 15.1 13.1C13.2 13.3 10.9 14.1 9.1 15.2C7.4 16.2 6.3 17.3 6.5 17.9C6.7 18.4 7.4 18.3 8.2 17.6C9.3 16.6 10.7 14.4 11.7 11.8C12.5 9.6 12.8 7.5 12.5 6.7C12.4 6.6 12.3 6.5 12.2 6.5Z" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                 </svg>
+                                 <span>Ver Acta PDF</span>
+                               </a>`
+                            : `<span class="text-[11px] text-slate-400 font-semibold">Pendiente PDF</span>`
+                        }
+                    </td>
+                </tr>
+            `).join("");
+        }
+
+        // ==========================================
+        // 5. ANIMACIÓN INTERACTIVA DEL PANDA EN HEADER
+        // ==========================================
+        function initInteractiveHeader() {
+            const panda = document.getElementById('pandaCharacter');
+            const header = document.getElementById('mainAnimatedHeader');
+            const speechBubble = document.getElementById('speechBubble');
+            const pupilLeftFront = document.getElementById('pupilLeftFront');
+            const pupilRightFront = document.getElementById('pupilRightFront');
+            if (!panda || !header) return;
+
+            const messages = [
+                "¡Adelante Ahora Nación! 🇵🇪",
+                "¡Vamos Pandia y Yannina! 🏆",
+                "¡Puno merece más! ❤️",
+                "¡Cada acta suma! 📊"
+            ];
+
+            function triggerNextSpeech() {
+                speechBubble.textContent = messages[Math.floor(Math.random() * messages.length)];
+                speechBubble.classList.add('active');
+                setTimeout(() => speechBubble.classList.remove('active'), 3000);
+            }
+
+            setInterval(triggerNextSpeech, 5500);
+            setTimeout(triggerNextSpeech, 1200);
+
+            panda.addEventListener('click', () => {
+                triggerNextSpeech();
+                panda.classList.add('panda-jump');
+                setTimeout(() => panda.classList.remove('panda-jump'), 700);
+            });
+
+            header.addEventListener('mousemove', (e) => {
+                const rect = panda.getBoundingClientRect();
+                const offsetX = Math.max(-3, Math.min(3, (e.clientX - (rect.left + rect.width / 2)) / 80));
+                const offsetY = Math.max(-2, Math.min(2, (e.clientY - (rect.top + rect.height / 2)) / 80));
+                pupilLeftFront.setAttribute('cx', (74 + offsetX).toString());
+                pupilLeftFront.setAttribute('cy', (82 + offsetY).toString());
+                pupilRightFront.setAttribute('cx', (126 + offsetX).toString());
+                pupilRightFront.setAttribute('cy', (82 + offsetY).toString());
+            });
+
+            const canvas = document.getElementById('interactiveCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resizeCanvas() {
+                canvas.width = header.offsetWidth;
+                canvas.height = header.offsetHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            class Particle {
+                constructor() { this.reset(); }
+                reset() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2.5 + 1;
+                    this.speedX = (Math.random() - 0.5) * 1.1;
+                    this.speedY = (Math.random() - 0.5) * 1.1;
+                    this.alpha = Math.random() * 0.5 + 0.3;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
+                }
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.alpha;
+                    ctx.fillStyle = '#FFFFFF';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            for (let i = 0; i < 30; i++) particles.push(new Particle());
+
+            function drawCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 95) {
+                            ctx.save();
+                            ctx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                            ctx.restore();
+                        }
+                    }
+                }
+                requestAnimationFrame(drawCanvas);
+            }
+            drawCanvas();
+        }
+    </script>
+</body>
+</html>
