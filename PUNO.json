@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T21:15:27.714Z",
+  "updatedAt": "2026-11-25T02:07:27.434Z",
   "departamento": "Puno",
   "provincia": "Puno",
   "distritos": [
@@ -72,11 +72,11 @@
     },
     {
       "distrito": "Chucuito",
-      "totalActas": 0,
-      "pandia": 0,
-      "jp": 0,
-      "blancos": 0,
-      "nulos": 0
+      "totalActas": 1,
+      "pandia": 158,
+      "jp": 28,
+      "blancos": 28,
+      "nulos": 80
     },
     {
       "distrito": "Coata",
@@ -240,6 +240,24 @@
         "jp": 80,
         "blancos": 5,
         "nulos": 3
+      }
+    },
+    {
+      "departamento": "Puno",
+      "provincia": "Puno",
+      "distrito": "Chucuito",
+      "colegio": "Merced",
+      "mesa": "64874",
+      "responsable": "Juan manzano",
+      "pdfUrl": "",
+      "invalidated": false,
+      "observed": false,
+      "incidentNote": "",
+      "votos": {
+        "pandia": 158,
+        "jp": 28,
+        "blancos": 28,
+        "nulos": 80
       }
     }
   ]
